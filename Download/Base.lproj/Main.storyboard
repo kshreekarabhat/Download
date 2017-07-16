@@ -23,29 +23,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sf7-XP-AHv">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <rect key="frame" x="16" y="20" width="343" height="447"/>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Cno-DJ-Oct">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHh-Ms-NNw">
+                                <rect key="frame" x="16" y="527" width="188" height="30"/>
+                                <state key="normal" title="Download without progress"/>
+                                <connections>
+                                    <action selector="downloadAsyncProgress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BQO-cI-fuq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsd-yT-5M2">
+                                <rect key="frame" x="16" y="617" width="166" height="30"/>
+                                <state key="normal" title="Download with progress"/>
+                                <connections>
+                                    <action selector="downloadAsync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XwR-Wk-sde"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Cno-DJ-Oct">
+                                <rect key="frame" x="229" y="527.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="b5n-ad-Tbg"/>
+                                    <constraint firstAttribute="width" constant="20" id="ijy-FU-di6"/>
+                                </constraints>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFM-Be-8rP">
+                                <rect key="frame" x="190" y="642" width="20" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="iWT-si-TeS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="QFM-Be-8rP" firstAttribute="leading" secondItem="Hsd-yT-5M2" secondAttribute="trailing" constant="8" id="AZp-fC-IiQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hsd-yT-5M2" secondAttribute="bottom" constant="20" id="I1P-0e-kno"/>
                             <constraint firstItem="Sf7-XP-AHv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LDh-x5-Bts"/>
+                            <constraint firstItem="uHh-Ms-NNw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TIh-vF-h69"/>
+                            <constraint firstItem="Cno-DJ-Oct" firstAttribute="baseline" secondItem="uHh-Ms-NNw" secondAttribute="baseline" id="TfC-Xt-dgJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Sf7-XP-AHv" secondAttribute="trailing" id="Ud3-79-9Qf"/>
-                            <constraint firstItem="Cno-DJ-Oct" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WB4-SI-adP"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sf7-XP-AHv" secondAttribute="bottom" id="YLr-ma-xfj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sf7-XP-AHv" secondAttribute="bottom" constant="200" id="YLr-ma-xfj"/>
                             <constraint firstItem="Sf7-XP-AHv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YOp-pB-Z87"/>
-                            <constraint firstItem="Cno-DJ-Oct" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lVw-N6-gyj"/>
+                            <constraint firstItem="QFM-Be-8rP" firstAttribute="baseline" secondItem="Hsd-yT-5M2" secondAttribute="baseline" id="fHf-oQ-zLD"/>
+                            <constraint firstItem="Hsd-yT-5M2" firstAttribute="top" secondItem="uHh-Ms-NNw" secondAttribute="bottom" constant="60" id="ihk-BX-AvE"/>
+                            <constraint firstItem="Cno-DJ-Oct" firstAttribute="leading" secondItem="uHh-Ms-NNw" secondAttribute="trailing" constant="25" id="ts0-j5-Noe"/>
+                            <constraint firstItem="Hsd-yT-5M2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="x2R-cb-oN4"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Sf7-XP-AHv" id="cLQ-Se-OTM"/>
                         <outlet property="progressIndicator" destination="Cno-DJ-Oct" id="kTT-q9-jQ0"/>
+                        <outlet property="progressLabel" destination="QFM-Be-8rP" id="pAa-Bi-7gP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
